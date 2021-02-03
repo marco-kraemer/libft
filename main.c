@@ -81,6 +81,13 @@ int main()
     printf("ft_strlcpy: %s\n", dest7);
     printf("   strncpy: %s\n", dest8);
 
+    // ft_strlcat
+    printf("________________________________________________\n");
+    char src9[16] = "marco";
+    char dest9[16] = "aurelio";
+    ft_strlcat(dest9, src9, 15);
+    printf("ft_strlcat: %s\n", dest9);
+
     //final
     printf("\n");   
     return (0); 
