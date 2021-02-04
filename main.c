@@ -79,7 +79,6 @@ int main()
     ft_strlcpy(dest7, src7, 8);
     strncpy(dest8, src7, 8);
     printf("ft_strlcpy: %s\n", dest7);
-    printf("   strncpy: %s\n", dest8);
 
     // ft_strlcat
     printf("________________________________________________\n");
@@ -87,6 +86,16 @@ int main()
     char dest9[16] = "aurelio";
     ft_strlcat(dest9, src9, 15);
     printf("ft_strlcat: %s\n", dest9);
+
+    // ft_strchr
+    printf("________________________________________________\n");
+    printf("   strchr: %p, %s\n", strchr(src, '\0'), strchr(src, '\0'));
+    printf("ft_strchr: %p, %s\n", ft_strchr(src, '\0'), ft_strchr(src, '\0'));
+
+    // ft_strrchr
+    printf("________________________________________________\n");
+    printf("   strrchr: %p, %s\n", strrchr(src, 'k'), strrchr(src, 'k'));
+    printf("ft_strrchr: %p, %s\n", ft_strrchr(src, 'k'), ft_strrchr(src, 'k'));
 
     //final
     printf("\n");   

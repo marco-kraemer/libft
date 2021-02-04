@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/03 14:59:16 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/03 14:59:16 by maraurel         ###   ########.fr       */
+/*   Created: 2021/02/04 08:34:31 by maraurel          #+#    #+#             */
+/*   Updated: 2021/02/04 08:34:31 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlcat(char *dst, const char *src, size_t size)
+char *ft_strrchr(const char *str, int c)
 {
-    size_t i;
-    size_t k;
+    int i;
+    int j;
+    char *p;
 
     i = 0;
-    k = 0;
-    while (dst[i] && i < size)
-        i++;
-    while (src[k] && i + k < size - 1)
+    j = 0;
+    p = (char*)str;
+    while (str[i])
     {
-        dst[i + k] = src[k];
-        k++;
+        if (str[i] == c)
+            j = i;
+        i++;
     }
-
-    dst[i + k] = '\0';
-    return (i + ft_strlen(src));
+    if (c == '\0')
+        return (p + i);
+    if (j == 0)
+        return (NULL);
+    return (p + j);
 }
