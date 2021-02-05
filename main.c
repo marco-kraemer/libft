@@ -168,7 +168,11 @@ int main()
 
     //ft_split
     printf("________________________________________________\n");
-    printf("ft_split: %s\n", ft_split("abckdefkijklmn", 'k')[0]);
+    printf("ft_split: %s\n", ft_split("marco  aurelio", ' ')[2]);
+
+    //ft_itoa
+    printf("________________________________________________\n");
+    printf("ft_split: %s\n", ft_itoa(150));
 
     //final
     printf("\n");   

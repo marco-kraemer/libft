@@ -28,27 +28,19 @@ int     count_char(char const *s, char c)
     return (j);
 }
 
-char    **ft_split(char const *s, char c)
+void    create_array(int i, char const *s, char c, char **p)
 {
-    char    **p;
-    int     i;
-    int     j;
-    int     k;
+    int j;
+    int k;
 
-    p = (char **)malloc(count_char(s, c));
-    i = 0;
-    while (i < c)
-    {
-        p[i] = (char *)malloc(ft_strlen(s));
-        i++;
-    }
+    j = 0;
     k = 0;
     i = 0;
-    j = 0;
     while (s[k])
     {
-        if (s[k] == c)
+        if (s[k] == c && j != 0)
         {
+            p[i][j] = '\0';
             i++;
             j = 0;
         }
@@ -56,6 +48,32 @@ char    **ft_split(char const *s, char c)
         k++;
         j++;
     }
-    free(p);
+    p[i][j] = '\0';
+    p[i + 1] = NULL;
+}
+
+char    **ft_split(char const *s, char c)
+{
+    char    **p;
+    int     i;
+
+    p = (char **)malloc(count_char(s, c));
+    i = 0;
+    while (i < c)
+    {
+        p[i] = (char *)malloc(ft_strlen(s));
+        if (p[i] == NULL)
+        {
+            while (i < c)
+            {
+                free(p[i]);
+                i++;
+            }
+            free(p);
+            return (NULL);
+        }
+        i++;
+    }
+    create_array(i, s, c, p);
     return (p);
 }
