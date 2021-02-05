@@ -172,7 +172,7 @@ int main()
 
     //ft_itoa
     printf("________________________________________________\n");
-    printf("ft_split: %s\n", ft_itoa(150));
+    printf("ft_split: %s\n", ft_itoa(123));
 
     //final
     printf("\n");   
