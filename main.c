@@ -166,6 +166,10 @@ int main()
     printf("________________________________________________\n");
     printf("ft_strtrim: %s\n", ft_strtrim(src, "GEe"));
 
+    //ft_split
+    printf("________________________________________________\n");
+    printf("ft_split: %s\n", ft_split("abckdefkijklmn", 'k')[0]);
+
     //final
     printf("\n");   
     return (0);
