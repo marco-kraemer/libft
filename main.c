@@ -154,7 +154,19 @@ int main()
     printf("ft_strdup: %s\n", ft_strdup(src));
     printf("   strdup: %s\n", strdup(src));
 
+    //ft_substr
+    printf("________________________________________________\n");
+    printf("ft_substr: %s\n", ft_substr(src, 1, 20));
+
+    //ft_strjoin
+    printf("________________________________________________\n");
+    printf("ft_strjoin: %s\n", ft_strjoin(src, src9));
+
+    //ft_strtrim
+    printf("________________________________________________\n");
+    printf("ft_strtrim: %s\n", ft_strtrim(src, "GEe"));
+
     //final
     printf("\n");   
-    return (0); 
+    return (0);
 }

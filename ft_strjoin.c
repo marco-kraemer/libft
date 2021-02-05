@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/04 13:44:05 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/04 13:44:05 by maraurel         ###   ########.fr       */
+/*   Created: 2021/02/04 14:43:13 by maraurel          #+#    #+#             */
+/*   Updated: 2021/02/04 14:43:13 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strdup(const char *s)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-    int     i;
-    size_t  length;
     char    *p;
-    char    *k;
+    int     i;
+    int     len;
 
-    k = (char *)s;
-    length = ft_strlen(s);
-    p = (void*)malloc(length);
-    i = 0;
+    len = ft_strlen(s1) + ft_strlen(s2);
+    p = (void*)malloc(len);
     if (p == NULL)
         return (NULL);
-    while (s[i])
+    i = 0;
+    while (s1[i])
     {
-        p[i] = k[i];
+        p[i] = s1[i];
         i++;
     }
-    return k;
+    i = 0;
+    while (s2[i])
+    {
+        p[ft_strlen(s1) + i] = s2[i];
+        i++;
+    }
+    return (p);
 }
