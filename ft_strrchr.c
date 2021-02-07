@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/06 18:35:37 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/07 15:59:12 by maraurel         ###   ########.fr       */
+/*   Created: 2021/02/07 15:22:32 by maraurel          #+#    #+#             */
+/*   Updated: 2021/02/07 15:24:45 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strrchr(const char *str, int c)
 {
-	int	i;
-	int	j;
-	int	value;
+	int		i;
+	int		j;
+	char	*p;
 
 	i = 0;
-	j = 1;
-	value = 0;
-	while (nptr[i] == 32)
-		i++;
-	if (nptr[i] == 45)
+	j = 0;
+	p = (char *)str;
+	while (str[i])
 	{
-		j = j * (-1);
+		if (str[i] == c)
+			j = i;
 		i++;
 	}
-	if (nptr[i] == 43)
-		i++;
-	if (nptr[i] < 48 || nptr[i] > 56)
-		return (0);
-	while (nptr[i])
-	{
-		if (nptr[i] < 48 || nptr[i] > 56)
-			break ;
-		value = value * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return (value * j);
+	if (c == '\0')
+		return (p + i);
+	if (j == 0)
+		return (NULL);
+	return (p + j);
 }

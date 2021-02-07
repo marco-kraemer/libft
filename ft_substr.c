@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lower.c                                         :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/06 19:14:58 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/06 19:16:02 by maraurel         ###   ########.fr       */
+/*   Created: 2021/02/07 15:26:18 by maraurel          #+#    #+#             */
+/*   Updated: 2021/02/07 15:28:50 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (c < 91 && c > 64)
-		c = c + 32;
-	return (c);
+	char	*p;
+	size_t	i;
+
+	p = (void *)malloc(len);
+	if (p == NULL)
+		return (NULL);
+	i = 0;
+	while (i < len && s[start])
+	{
+		p[i] = s[start];
+		i++;
+		start++;
+	}
+	return (p);
 }
