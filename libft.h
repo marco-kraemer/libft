@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 13:32:19 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/08 15:24:25 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/08 19:37:17 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memchr(const void *str, int c, size_t n);
 void				*ft_calloc(size_t nmemb, size_t size);
 void				ft_lstadd_front(t_list **lst, t_list *new);
+void				ft_lstadd_back(t_list **lst, t_list *new);
 int					ft_atoi(const char *nptr);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 int					ft_isalpha(int c);
