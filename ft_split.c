@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 14:43:48 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/07 14:54:03 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/10 20:37:26 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int		count_char(char const *s, char c)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
-	i = 0;
 	j = 0;
+	i = 0;
 	while (s[i])
 	{
 		if (s[i] == c)
@@ -56,12 +56,15 @@ char	**ft_split(char const *s, char c)
 {
 	char	**p;
 	int		i;
+	int		count;
 
-	p = (char **)malloc(count_char(s, c));
+	count = count_char(s, c);
+	p = (char **)malloc(count);
+	if (p == NULL)
+		return (NULL);
 	i = 0;
 	while (i < c)
 	{
-		p[i] = (char *)malloc(ft_strlen(s));
 		if (p[i] == NULL)
 		{
 			while (i < c)

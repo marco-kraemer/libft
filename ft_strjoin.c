@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 15:04:16 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/07 15:07:38 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/10 18:35:25 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len;
 
 	len = ft_strlen(s1) + ft_strlen(s2);
-	p = (void *)malloc(len);
-	if (p == NULL)
+	if (!s1 || ! s2)
+		return (NULL);
+	if (!(p = malloc(len + 1)))
 		return (NULL);
 	i = 0;
 	while (s1[i])
@@ -34,5 +35,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		p[ft_strlen(s1) + i] = s2[i];
 		i++;
 	}
+	p[ft_strlen(s1) + i] = '\0';
 	return (p);
 }
+

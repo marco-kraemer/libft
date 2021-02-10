@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 15:00:39 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/07 15:03:45 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/10 18:08:12 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ char	*ft_strdup(const char *s)
 	char	*k;
 
 	k = (char *)s;
-	length = ft_strlen(s);
-	p = (void *)malloc(length);
-	i = 0;
-	if (p == NULL)
+	length = ft_strlen(k) + 1;
+	if (!(p = malloc(length)))
 		return (NULL);
+	i = 0;
 	while (s[i])
 	{
 		p[i] = k[i];
 		i++;
 	}
-	return (k);
+	p[i] = '\0';
+	return (p);
 }

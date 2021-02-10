@@ -6,50 +6,24 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 15:42:20 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/07 16:06:12 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/10 19:50:35 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*check_letters(char *p, char *c, char const *set, int j)
-{
-	int		i;
-	int		k;
-
-	i = 0;
-	while (c[i])
-	{
-		k = 0;
-		while (set[k])
-		{
-			if (c[i] == set[k])
-			{
-				k = -1;
-				break ;
-			}
-			k++;
-		}
-		if (k != -1)
-		{
-			p[j] = c[i];
-			j++;
-		}
-		i++;
-	}
-	return (p);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*p;
-	char	*c;
-	int		j;
+	int		i;
+	char	*sub;
 
-	j = 0;
-	c = (char *)s1;
-	p = (void *)malloc(ft_strlen(s1) - ft_strlen(set));
-	if (p == NULL)
+	if (!s1 || !set)
 		return (NULL);
-	return (check_letters(p, c, set, j));
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	i = ft_strlen(s1);
+	while (i && ft_strrchr(set, s1[i]))
+		i--;
+	sub = ft_substr((char *)s1, 0, i + 1);
+	return (sub);
 }
