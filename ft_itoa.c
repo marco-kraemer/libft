@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 19:02:09 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/06 19:13:48 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/11 20:32:30 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int		count_digits(int n)
 	int		i;
 
 	i = 1;
+	if (n < 0)
+		n = n * (-1);
 	while (i > 0)
 	{
 		n = n / 10;
@@ -30,14 +32,22 @@ int		count_digits(int n)
 void	reverse(char *p, char *tmp, int i, int n)
 {
 	int		j;
+	int		c;
 
+	c = count_digits(n);
 	j = 0;
-	while (j < count_digits(n))
+	if (n < 0)
+	{
+		j++;
+		c++;
+	}
+	while (j < c)
 	{
 		p[j] = tmp[i - 1];
 		j++;
 		i--;
 	}
+	p[j] = '\0';
 }
 
 char	*ft_itoa(int n)
@@ -50,8 +60,17 @@ char	*ft_itoa(int n)
 
 	c = count_digits(n);
 	i = 0;
-	p = (char *)malloc(c);
+	if (n < 0)
+		c++;
+	if (!(p = (char *)malloc(c + 1)))
+		return (NULL);
 	cpy = n;
+	if (n < 0)
+	{
+		i++;
+		p[0] = '-';
+		cpy = cpy *(-1);
+	}
 	while (i < c)
 	{
 		tmp[i] = (cpy % 10) + '0';
