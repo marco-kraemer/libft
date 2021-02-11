@@ -6,108 +6,94 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 14:43:48 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/11 15:38:55 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/11 19:04:43 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		count_char(char const *s, char c)
+static int		numstring(char const *s1, char c)
 {
-	int		i;
-	int		j;
+	int	comp;
+	int	cles;
 
-	j = 1;
-	i = 0;
-	while (s[i] == c)
-		i++;
-	if (s[i] == '\0')
+	comp = 0;
+	cles = 0;
+	if (*s1 == '\0')
 		return (0);
-	while (s[i])
+	while (*s1 != '\0')
 	{
-		if (s[i] == c && s[i + 1] != '\0')
+		if (*s1 == c)
+			cles = 0;
+		else if (cles == 0)
 		{
-			while (s[i] == c)
-				i++;
-			if (s[i] != '\0')
-				j++;
+			cles = 1;
+			comp++;
 		}
+		s1++;
+	}
+	return (comp);
+}
+
+static int		numchar(char const *s2, char c, int i)
+{
+	int	lenght;
+
+	lenght = 0;
+	while (s2[i] != c && s2[i] != '\0')
+	{
+		lenght++;
 		i++;
 	}
-	return (j);	
+	return (lenght);
 }
 
-void	put_chars(char **p, char const *s, char c)
-{
-	int		j;
-	int		k;
-	int		i;
-
-	j = 0;
-	i = 0;
-	while (s[i])
-	{
-		k = 0;
-		while (s[i] != '\0' && s[i] != c)
-			p[j][k++] = s[i++];
-		while (s[i] == c)
-			i++;
-		j++;
-	}
-}
-
-static char	**to_free(char const **p, int j)
+static char		**freee(char const **dst, int j)
 {
 	while (j > 0)
 	{
 		j--;
-		free((void *)p[j]);
+		free((void *)dst[j]);
 	}
-	free(p);
+	free(dst);
 	return (NULL);
 }
 
-char	**create_array(char const *s, char c, char **p)
+static char		**affect(char const *s, char **dst, char c, int l)
 {
-	int		i;
-	int		j;
-	int		k;
+	int	i;
+	int	j;
+	int	k;
 
 	i = 0;
 	j = 0;
-	k = 0;
-	while (s[i])
+	while (s[i] != '\0' && j < l)
 	{
-		k++;
-		if (s[i + 1] == c || s[i + 1] == '\0')
-		{
-			p[j] = malloc(k + 1);
-			if (p[j] == NULL)
-				return (to_free((char const **)p, j));
-			p[j][k] = '\0';
-			j++;
-			while (s[i + 1] == c)
-				i++;
-			k = 0;
-		}
-		i++;
+		k = 0;
+		while (s[i] == c)
+			i++;
+		dst[j] = (char *)malloc(sizeof(char) * numchar(s, c, i) + 1);
+		if (dst[j] == NULL)
+			return (freee((char const **)dst, j));
+		while (s[i] != '\0' && s[i] != c)
+			dst[j][k++] = s[i++];
+		dst[j][k] = '\0';
+		j++;
 	}
-	put_chars(p, s, c);
-	return(p);
+	dst[j] = 0;
+	return (dst);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
-	char	**p;
-	int		count;
+	char	**dst;
+	int		l;
 
-	count = count_char(s, c);
-	p = (char **)malloc(sizeof(char *) * (count + 1));
-	p[count] = 0;
-	if (count == 0)
-		return (p);
-	if (p == NULL)
+	if (s == NULL)
 		return (NULL);
-	create_array(s, c, p);
-	return (p);
+	l = numstring(s, c);
+	dst = (char **)malloc(sizeof(char *) * (l + 1));
+	if (dst == NULL)
+		return (NULL);
+	return (affect(s, dst, c, l));
 }
