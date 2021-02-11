@@ -6,11 +6,15 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/09 15:34:23 by maraurel          #+#    #+#              #
-#    Updated: 2021/02/11 16:17:40 by maraurel         ###   ########.fr        #
+#    Updated: 2021/02/09 18:21:42 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+CC = gcc
+
+CFLAGS = -Wall -Wextra -Werror -I. -c
 
 SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 	ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
@@ -24,28 +28,28 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 	ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c \
 	ft_tolower.c / ft_toupper.c
 
-OBJS = $(SRC:.c=.o)
-
-FLAGS = -Wall -Wextra -Werror
-
-CC = gcc
-
-HEADER = libft.h
+OBJFILES = ./*.o
 
 all: $(NAME)
 
-$(NAME):
-	$(CC) $(FLAGS) -c $(SRC)
-	@ar rc $(NAME) $(OBJ)
+$(NAME): $(OBJ)
+	@ar -rcs $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
+$(OBJ): $(SRC)
+	$(CC) $(CFLAGS) $(SRC)
+
 clean:
-	rm -rf $(OBJS)
+	$(RM) $(OBJFILES)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 
 re: fclean all
 
-.PHONY: all clean fclean re
+so:
+	$(CC) -fPIC $(CFLAGS) $(SRC)
+	gcc -shared -o libft.so $(OBJFILES)
+
+.PHONY: all clean fclean re so
