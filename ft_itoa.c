@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 19:02:09 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/12 03:23:16 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/12 19:34:08 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		count_digits(int n)
 	return (i);
 }
 
-void	reverse(char *p, char *tmp, int i, int n)
+char	*reverse(char *p, char *tmp, int i, int n)
 {
 	int		j;
 	int		c;
@@ -50,15 +50,16 @@ void	reverse(char *p, char *tmp, int i, int n)
 		i--;
 	}
 	p[j] = '\0';
+	return (p);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*p;
 	char	tmp[count_digits(n)];
-	size_t		i;
-	size_t		c;
-	size_t		cpy;
+	size_t	i;
+	size_t	c;
+	size_t	cpy;
 
 	c = count_digits(n);
 	i = 0;
@@ -71,14 +72,12 @@ char	*ft_itoa(int n)
 	{
 		i++;
 		p[0] = '-';
-		cpy = cpy *(-1);
+		cpy = cpy * (-1);
 	}
-	while (i < c)
+	while (i++ < c)
 	{
 		tmp[i] = (cpy % 10) + '0';
 		cpy = cpy / 10;
-		i++;
 	}
-	reverse(p, tmp, i, n);
-	return (p);
+	return (reverse(p, tmp, i, n));
 }

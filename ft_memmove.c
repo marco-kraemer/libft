@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 14:39:08 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/09 19:55:00 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/12 19:44:05 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
+	size_t	i;
 	char	*tmp1;
 	char	*tmp2;
-	unsigned int		i;
 
 	if (!dest && !src)
 		return (NULL);
@@ -29,7 +29,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	else
 		while (i < n)
 		{
-			tmp1[i] = tmp2[i];	
+			tmp1[i] = tmp2[i];
 			i++;
 		}
 	return (dest);

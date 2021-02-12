@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 02:37:02 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/09 03:13:23 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/12 19:40:59 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
+	t_list	*new;
 	t_list	*tmp;
 
-	while ((*lst)->next != NULL)
+	new = *lst;
+	while (new)
 	{
-		tmp = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		(*lst) = tmp;
+		tmp = new;
+		new = tmp->next;
+		ft_lstdelone(tmp, del);
 	}
-	(*lst) = NULL;
+	*lst = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 19:16:29 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/09 19:08:24 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/12 19:40:33 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	size_t		i;
+	size_t			i;
 	unsigned char	*dest2;
 	unsigned char	*src2;
 

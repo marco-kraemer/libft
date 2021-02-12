@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 18:41:17 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/08 18:51:43 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/12 13:53:22 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*new;
 
+	if (lst == NULL)
+		return (NULL);
 	new = lst;
 	while (new->next != NULL)
 	{

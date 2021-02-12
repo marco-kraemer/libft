@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 03:04:04 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/09 12:51:39 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/12 15:20:04 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		{
 			ft_lstclear(&newlst, del);
 			ft_lstclear(&lst, del);
-			break ;
+			return (NULL);
 		}
 		lst = lst->next;
 		ft_lstadd_back(&newlst, element);

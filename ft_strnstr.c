@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 15:17:33 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/10 15:49:29 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/12 19:36:06 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		while (little[j] == big[i + j] && i + j < len)
 		{
 			if (little[j + 1] == '\0')
-				return ((char *)big + i);	
+				return ((char *)big + i);
 			j++;
 		}
 		i++;

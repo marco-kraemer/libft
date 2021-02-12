@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 15:22:32 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/10 13:24:54 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/12 19:35:37 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,4 @@ char	*ft_strrchr(const char *str, int c)
 		if (str[i] == c)
 			return ((char *)str + i);
 	return (NULL);
-	
 }

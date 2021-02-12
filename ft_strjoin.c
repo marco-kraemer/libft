@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 15:04:16 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/10 18:35:25 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/12 19:37:10 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len;
 
 	len = ft_strlen(s1) + ft_strlen(s2);
-	if (!s1 || ! s2)
+	if (!s1 || !s2)
 		return (NULL);
 	if (!(p = malloc(len + 1)))
 		return (NULL);
@@ -38,4 +38,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	p[ft_strlen(s1) + i] = '\0';
 	return (p);
 }
-

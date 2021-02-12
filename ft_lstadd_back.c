@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 19:37:57 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/09 02:35:14 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/12 14:05:46 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	ft_lstlast(*lst)->next = new;
-	new->next = NULL;
+	if (*lst != NULL)
+	{
+		ft_lstlast(*lst)->next = new;
+		new->next = NULL;
+	}
+	else
+		*lst = new;
 }

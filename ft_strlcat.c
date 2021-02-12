@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 15:08:09 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/10 14:51:22 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/12 18:51:50 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,20 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	i;
 	size_t	j;
 
-	i = ft_strlen(dst);
+	i = 0;
 	j = 0;
-	while (src[j] && i + j < size - 1 && size > 0)
+	while (dst[i])
+		i++;
+	if (size < i)
 	{
-		dst[i + j] = src[j];
-		j++;
+		while (src[j])
+			j++;
+		return (size + j);
 	}
-	dst[i + j] = '\0';
-	if (size < ft_strlen(src))
-		return (ft_strlen(src) + size);
-	return (i + ft_strlen(src));
+	while (i < size - 1 && src[j])
+		dst[i++] = src[j++];
+	dst[i] = '\0';
+	while (src[j++])
+		i++;
+	return (i);
 }

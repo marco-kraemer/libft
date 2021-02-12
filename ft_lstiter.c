@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 02:55:06 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/09 03:03:44 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/12 14:50:34 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*tmp;
 
-	while (lst->next != NULL)
+	while (lst)
 	{
 		tmp = lst->next;
 		f(lst->content);
