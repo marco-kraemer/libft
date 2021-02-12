@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 12:58:25 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/08 14:48:44 by maraurel         ###   ########.fr       */
+/*   Created: 2021/02/12 03:41:08 by maraurel          #+#    #+#             */
+/*   Updated: 2021/02/12 03:45:32 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,25 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*p;
+	char digit;
+	char negative;
 
+	negative = 45;
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		n = n * (-1);
+		return ;
+	}
 	if (n < 0)
 	{
+		write(fd, &negative, 1);
 		n = n * (-1);
-		ft_putchar_fd('-', fd);
 	}
-	p = ft_itoa(n);
-	ft_putstr_fd(p, fd);
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+	}
+	digit = (n % 10) + '0';
+	write(fd, &digit, 1);
 }

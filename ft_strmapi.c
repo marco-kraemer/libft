@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 22:15:25 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/08 12:35:30 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/12 03:24:58 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 
 	i = 0;
-	p = (char *)malloc(ft_strlen(s) + 1);
-	if (p == NULL)
+	if (!s)
+		return (NULL);
+	if(!(p = (char *)malloc(ft_strlen(s) + 1)))
 		return (NULL);
 	while (s[i] != '\0')
 	{

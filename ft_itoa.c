@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 19:02:09 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/11 20:32:30 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/12 03:23:16 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int		count_digits(int n)
 {
 	int		i;
 
+	if (n == -2147483648)
+		return (10);
 	i = 1;
 	if (n < 0)
 		n = n * (-1);
@@ -54,9 +56,9 @@ char	*ft_itoa(int n)
 {
 	char	*p;
 	char	tmp[count_digits(n)];
-	int		i;
-	int		c;
-	int		cpy;
+	size_t		i;
+	size_t		c;
+	size_t		cpy;
 
 	c = count_digits(n);
 	i = 0;
