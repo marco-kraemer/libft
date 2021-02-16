@@ -6,7 +6,7 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/09 15:34:23 by maraurel          #+#    #+#              #
-#    Updated: 2021/02/12 15:26:24 by maraurel         ###   ########.fr        #
+#    Updated: 2021/02/16 01:42:17 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,11 +45,6 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-
 re: fclean all
-
-so:
-	$(CC) -fPIC $(CFLAGS) $(SRC)
-	gcc -shared -o libft.so $(OBJFILES)
 
 .PHONY: all clean fclean re so

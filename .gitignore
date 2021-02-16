@@ -3,3 +3,4 @@ main.h
 a.out
 *.swp
 *.a
+*.so

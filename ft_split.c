@@ -6,36 +6,36 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/07 14:43:48 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/11 19:04:43 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/16 01:39:14 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		numstring(char const *s1, char c)
+int		countstring(char const *s, char c)
 {
-	int	comp;
-	int	cles;
+	int	i;
+	int	j;
 
-	comp = 0;
-	cles = 0;
-	if (*s1 == '\0')
+	i = 0;
+	j = 0;
+	if (*s == '\0')
 		return (0);
-	while (*s1 != '\0')
+	while (*s != '\0')
 	{
-		if (*s1 == c)
-			cles = 0;
-		else if (cles == 0)
+		if (*s == c)
+			j = 0;
+		else if (j == 0)
 		{
-			cles = 1;
-			comp++;
+			j = 1;
+			i++;
 		}
-		s1++;
+		s++;
 	}
-	return (comp);
+	return (i);
 }
 
-static int		numchar(char const *s2, char c, int i)
+int		countchar(char const *s2, char c, int i)
 {
 	int	lenght;
 
@@ -48,18 +48,18 @@ static int		numchar(char const *s2, char c, int i)
 	return (lenght);
 }
 
-static char		**freee(char const **dst, int j)
+char	**to_free(char const **p, int j)
 {
 	while (j > 0)
 	{
 		j--;
-		free((void *)dst[j]);
+		free((void *)p[j]);
 	}
-	free(dst);
+	free(p);
 	return (NULL);
 }
 
-static char		**affect(char const *s, char **dst, char c, int l)
+char	**makearray(char const *s, char **p, char c, int l)
 {
 	int	i;
 	int	j;
@@ -72,28 +72,28 @@ static char		**affect(char const *s, char **dst, char c, int l)
 		k = 0;
 		while (s[i] == c)
 			i++;
-		dst[j] = (char *)malloc(sizeof(char) * numchar(s, c, i) + 1);
-		if (dst[j] == NULL)
-			return (freee((char const **)dst, j));
+		p[j] = (char *)malloc(sizeof(char) * countchar(s, c, i) + 1);
+		if (p[j] == NULL)
+			return (to_free((char const **)p, j));
 		while (s[i] != '\0' && s[i] != c)
-			dst[j][k++] = s[i++];
-		dst[j][k] = '\0';
+			p[j][k++] = s[i++];
+		p[j][k] = '\0';
 		j++;
 	}
-	dst[j] = 0;
-	return (dst);
+	p[j] = 0;
+	return (p);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char	**dst;
-	int		l;
+	char	**p;
+	int		i;
 
 	if (s == NULL)
 		return (NULL);
-	l = numstring(s, c);
-	dst = (char **)malloc(sizeof(char *) * (l + 1));
-	if (dst == NULL)
+	i = countstring(s, c);
+	p = (char **)malloc(sizeof(char *) * (i + 1));
+	if (p == NULL)
 		return (NULL);
-	return (affect(s, dst, c, l));
+	return (makearray(s, p, c, i));
 }
