@@ -6,7 +6,7 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/09 15:34:23 by maraurel          #+#    #+#              #
-#    Updated: 2021/02/17 11:15:53 by maraurel         ###   ########.fr        #
+#    Updated: 2021/02/17 11:24:58 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,8 +64,8 @@ HEADER = libft.h
 
 $(NAME):
 	gcc -Wall -Wextra -Werror -c $(SRC)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJS)
+	@ranlib $(NAME)
 
 clean:
 	$(RM) $(OBJS)
