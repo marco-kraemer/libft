@@ -6,7 +6,7 @@
 /*   By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 13:32:19 by maraurel          #+#    #+#             */
-/*   Updated: 2021/02/12 15:43:28 by maraurel         ###   ########.fr       */
+/*   Updated: 2021/02/16 12:43:23 by maraurel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <stddef.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
