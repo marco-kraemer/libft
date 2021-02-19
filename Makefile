@@ -6,7 +6,7 @@
 #    By: maraurel <maraurel@student.42sp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/09 15:34:23 by maraurel          #+#    #+#              #
-#    Updated: 2021/02/17 11:24:58 by maraurel         ###   ########.fr        #
+#    Updated: 2021/02/18 20:22:08 by maraurel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,15 +21,6 @@ SRC = ft_atoi.c \
 		ft_isdigit.c \
 		ft_isprint.c \
 		ft_itoa.c \
-		ft_lstadd_back.c \
-		ft_lstadd_front.c \
-		ft_lstclear.c \
-		ft_lstdelone.c \
-		ft_lstiter.c \
-		ft_lstlast.c \
-		ft_lstmap.c \
-		ft_lstnew.c \
-		ft_lstsize.c \
 		ft_memccpy.c \
 		ft_memcmp.c \
 		ft_memcpy.c \
@@ -56,7 +47,19 @@ SRC = ft_atoi.c \
 		ft_toupper.c \
 		ft_strncmp.c \
 
+SRC_BONUS = ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstclear.c \
+		ft_lstdelone.c \
+		ft_lstiter.c \
+		ft_lstlast.c \
+		ft_lstmap.c \
+		ft_lstnew.c \
+		ft_lstsize.c \
+
 OBJS = $(SRC:.c=.o)
+
+OBJS_BONUS = $(SRC_BONUS:.c=.o)
 
 all: $(NAME)
 
@@ -67,8 +70,13 @@ $(NAME):
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 
+bonus:
+	gcc -Wall -Wextra -Werror -c $(SRC_BONUS)
+	@ar rc $(NAME) $(OBJS_BONUS)
+	@ranlib $(NAME)
+
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	$(RM) $(NAME)
