@@ -6,9 +6,11 @@
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 13:14:27 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/18 13:20:36 by msantos2         ###   ########.fr       */
+/*   Updated: 2025/11/20 11:55:17 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, unsigned long n)
 {

@@ -6,19 +6,11 @@
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 13:31:35 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/18 13:32:26 by msantos2         ###   ########.fr       */
+/*   Updated: 2025/11/20 11:55:49 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_strlen(char *str)
-{
-	int	len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
+#include "libft.h"
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {

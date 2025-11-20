@@ -6,21 +6,11 @@
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 13:33:01 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/18 13:39:08 by msantos2         ###   ########.fr       */
+/*   Updated: 2025/11/20 11:56:31 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_strlen(char *str)
-{
-	int	len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
+#include "libft.h"
 
 char	*ft_strnstr(char *str, char *to_find)
 {
