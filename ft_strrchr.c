@@ -6,25 +6,31 @@
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:22:21 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/21 11:26:43 by msantos2         ###   ########.fr       */
+/*   Updated: 2025/11/21 15:27:13 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(char *str, int search_str)
+char	*ft_strrchr(const char *str, int search_str)
 {
 	int	i;
+	char 	*s;
+	unsigned char	c;
 
-	i = ft_strlen(str);
+	s = (char *)str;
+	i = ft_strlen(s);
+	c = (unsigned char)search_str;
 	while (i >= 0)
 	{
-		if (str[i] == search_str)
+		if (str[i] == c)
 		{
-			return (&str[i]); 
+			return (&s[i]); 
 		}
 		i--;
 	}
+	if (search_str == '\0')
+		return (&s[i]);
 	return (NULL);
 }
 

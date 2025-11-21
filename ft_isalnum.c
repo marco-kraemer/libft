@@ -6,7 +6,7 @@
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 13:33:09 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/20 11:55:20 by msantos2         ###   ########.fr       */
+/*   Updated: 2025/11/21 14:49:52 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z'))
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (8);
 	return (0);
 }

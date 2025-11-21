@@ -6,16 +6,12 @@
 #    By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/18 12:54:25 by msantos2          #+#    #+#              #
-#    Updated: 2025/11/20 11:47:08 by msantos2         ###   ########.fr        #
+#    Updated: 2025/11/21 13:39:16 by msantos2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
 
-SRC_DIR = srcs
-INC_DIR = includes
 SRC =	ft_isalpha.c \
 		ft_isdigit.c \
 		ft_isalnum.c \
@@ -37,16 +33,18 @@ SRC =	ft_isalpha.c \
 		ft_memcmp.c \
 		ft_strnstr.c \
 		ft_atoi.c \
+
 OBJ = $(SRC:.c=.o)
+
 HEADER = $(INC_DIR)/ft.h
+
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
-
-%.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+$(NAME):
+	cc $(FLAGS) -c $(SRC)
+	ar rc $(NAME) $(OBJ)
 
 clean:
 	rm -f $(OBJ)

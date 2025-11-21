@@ -6,7 +6,7 @@
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:04:02 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/19 13:38:46 by msantos2         ###   ########.fr       */
+/*   Updated: 2025/11/21 14:43:09 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
 	size_t		i;
 	int			ret;
-	const char	*s1;
-	const char	*s2;
+	unsigned char	*s1;
+	unsigned char	*s2;
 
-	s1 = (const char *)str1;
-	s2 = (const char *)str2;
+	s1 = (unsigned char *)str1;
+	s2 = (unsigned char *)str2;
 	i = 0;
 	ret = 0;
-	while ((s1[i] != 0 || s2[i] != 0) && i < n)
+	while (i < n)
 	{
 		if (s1[i] != s2[i])
 		{
@@ -43,7 +43,7 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 // 	char str2[15];
 // 	int ret;
 
-// 	memcpy(str1, "ABCa", 6);
+// 	memcpy(str1, "ABc", 6);
 // 	memcpy(str2, "ABC", 6);
 
 // 	ret = ft_memcmp(str1, str2, 20);

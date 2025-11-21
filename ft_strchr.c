@@ -6,32 +6,37 @@
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:14:09 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/21 11:21:25 by msantos2         ###   ########.fr       */
+/*   Updated: 2025/11/21 15:22:34 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(char *str, int search_str)
+char	*ft_strchr(const char *str, int search_str)
 {
 	int	i;
+	char 	*s;
+	unsigned char	c;
 
 	i = 0;
+	s = (char *)str;
+	c = (unsigned char)search_str;
 	while (str[i])
 	{
-		if (str[i] == search_str)
+		if (str[i] == c)
 		{
-			return (&str[i]); 
+			return (&s[i]); 
 		}
 		i++;
 	}
+	if (search_str == '\0')
+		return (&s[i]);
 	return (NULL);
 }
 
 // int	main(void)
 // {
 // 	char	str[100] = "Hello World!";
-// 	char	c = 'l';
 
-// 	printf("%s\n", ft_strchr(str, c));
+// 	printf("%s\n", ft_strchr(str, 'e' + 256));
 // }
