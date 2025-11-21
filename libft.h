@@ -6,7 +6,7 @@
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 10:42:46 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/21 15:58:52 by msantos2         ###   ########.fr       */
+/*   Updated: 2025/11/21 16:19:06 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size);
 size_t	ft_strlcat(char *dest, char *src, size_t size);
 int		ft_strlen(char *str);
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
-char	*ft_strnstr(char *str, char *to_find, int len);
+char	*ft_strnstr(const char *str, const char *to_find, size_t len);
 char	*ft_strrchr(const char *str, int search_str);
 int		ft_tolower(int i);
 int		ft_toupper(int i);
