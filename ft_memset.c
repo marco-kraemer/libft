@@ -6,7 +6,7 @@
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 12:37:58 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/20 12:41:17 by msantos2         ###   ########.fr       */
+/*   Updated: 2025/11/21 11:14:53 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ void	*ft_memset(void *str, int c, size_t n)
 	return (str);
 }
 
-int main () 
-{
-   char str[50];
+// int main () 
+// {
+// 	char str[50];
 
-   strcpy(str, "Hello World!");
-   puts(str);
+// 	strcpy(str, "Hello World!");
+// 	puts(str);
 
-   memset(str, '0', 3);
-   puts(str);
-   
-   return(0);
-}
+// 	ft_memset(str, '0', 3);
+// 	puts(str);
+
+// 	return(0);
+// }
