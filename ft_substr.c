@@ -6,7 +6,7 @@
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 12:54:26 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/22 13:51:13 by msantos2         ###   ########.fr       */
+/*   Updated: 2025/11/22 15:01:19 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*dest;
 	int		i;
-	int	check_len;
+	int		check_len;
 
 	check_len = ft_strlen(s) - start;
 	if (!s)
