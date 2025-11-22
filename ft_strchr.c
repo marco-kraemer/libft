@@ -6,7 +6,7 @@
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 11:14:09 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/21 15:22:34 by msantos2         ###   ########.fr       */
+/*   Updated: 2025/11/22 11:52:14 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strchr(const char *str, int search_str)
 {
-	int	i;
-	char 	*s;
+	int				i;
+	char			*s;
 	unsigned char	c;
 
 	i = 0;

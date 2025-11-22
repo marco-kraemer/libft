@@ -6,7 +6,7 @@
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:41:57 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/21 14:36:29 by msantos2         ###   ########.fr       */
+/*   Updated: 2025/11/22 11:51:57 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	if (!dest && !src)
 		return (NULL);
-
 	tmp_src = (char *)src;
 	if (dest > src)
 	{
