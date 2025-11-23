@@ -6,17 +6,11 @@
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/23 13:42:08 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/23 13:47:12 by msantos2         ###   ########.fr       */
+/*   Updated: 2025/11/23 16:07:40 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// typedef struct s_list
-// {
-// 	void *content;
-// 	struct s_list *next;
-// } t_list;
 
 t_list	*ft_lstnew(void *content)
 {

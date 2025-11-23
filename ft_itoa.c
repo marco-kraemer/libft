@@ -6,7 +6,7 @@
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 15:34:37 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/22 16:31:56 by msantos2         ###   ########.fr       */
+/*   Updated: 2025/11/23 16:06:57 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	nbr_len(long nbr)
 	return (len);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	long	nbr;
 	char	*str;
@@ -38,7 +38,6 @@ char *ft_itoa(int n)
 
 	nbr = n;
 	len = nbr_len(n);
-//	printf("\nLength: %d\n", len);
 	str = ft_calloc(sizeof(char), len + 1);
 	if (nbr < 0)
 	{
@@ -55,14 +54,5 @@ char *ft_itoa(int n)
 		nbr = nbr / 10;
 		len--;
 	}
-//	printf("\nNumber: %i\nString: %s\n", n, str);
 	return (str);
 }
-
-// int	main(void)
-// {
-// 	char *nbr = ft_itoa(123);
-// 	printf("%s\n", nbr);
-// 	free(nbr);
-// //	printf("%s\n", ft_itoa(1));
-// }

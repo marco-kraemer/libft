@@ -6,7 +6,7 @@
 #    By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/18 12:54:25 by msantos2          #+#    #+#              #
-#    Updated: 2025/11/23 15:36:28 by msantos2         ###   ########.fr        #
+#    Updated: 2025/11/23 15:56:28 by msantos2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ SRC =	ft_isalpha.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
+		ft_lstmap.c \
 
 OBJ = $(SRC:.c=.o)
 
