@@ -6,7 +6,7 @@
 #    By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/18 12:54:25 by msantos2          #+#    #+#              #
-#    Updated: 2025/11/23 13:20:22 by msantos2         ###   ########.fr        #
+#    Updated: 2025/11/23 13:54:51 by msantos2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,12 +46,17 @@ SRC =	ft_isalpha.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
+		ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
 
 OBJ = $(SRC:.c=.o)
 
 HEADER = $(INC_DIR)/ft.h
 
 CFLAGS = -Wall -Wextra -Werror
+
+bonus: $(NAME)
 
 all: $(NAME)
 
