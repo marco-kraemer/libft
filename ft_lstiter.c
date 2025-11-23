@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/23 13:50:12 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/23 14:50:22 by msantos2         ###   ########.fr       */
+/*   Created: 2025/11/23 15:09:08 by msantos2          #+#    #+#             */
+/*   Updated: 2025/11/23 15:44:57 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	count;
-
 	if (lst == NULL)
-		return (0);
-	count = 1;
-	while (lst->next != NULL)
+		return ;
+	while (lst)
 	{
+		f(lst->content);
 		lst = lst->next;
-		count++;
 	}
-	return (count);
 }
