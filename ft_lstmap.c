@@ -6,7 +6,7 @@
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/23 15:47:27 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/23 16:00:53 by msantos2         ###   ########.fr       */
+/*   Updated: 2025/11/23 16:34:42 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*head;
 	t_list	*new;
+	t_list	**tmp;
 
+	tmp = &lst;
 	if (!lst)
 		return (NULL);
 	head = ft_lstnew(f(lst->content));
@@ -29,5 +31,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		ft_lstadd_back(&head, new);
 		lst = lst->next;
 	}
+	ft_lstclear(tmp, del);
 	return (head);
 }
