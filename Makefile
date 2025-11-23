@@ -6,7 +6,7 @@
 #    By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/18 12:54:25 by msantos2          #+#    #+#              #
-#    Updated: 2025/11/22 16:46:15 by msantos2         ###   ########.fr        #
+#    Updated: 2025/11/23 12:56:25 by msantos2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,8 @@ SRC =	ft_isalpha.c \
 		ft_split.c \
 		ft_itoa.c \
 		ft_strmapi.c \
+		ft_striteri.c \
+		ft_putchar_fd.c \
 
 OBJ = $(SRC:.c=.o)
 
