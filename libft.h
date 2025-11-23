@@ -6,7 +6,7 @@
 /*   By: msantos2 <msantos2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 10:42:46 by msantos2          #+#    #+#             */
-/*   Updated: 2025/11/23 13:55:31 by msantos2         ###   ########.fr       */
+/*   Updated: 2025/11/23 14:15:12 by msantos2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,7 @@ void	ft_putnbr_fd(int n, int fd);
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 void	ft_lstadd_front(t_list **lst, t_list *new);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
 
 #endif
